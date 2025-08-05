@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>국대떡볶이</title>
+    <style>
+        body, h1, h2, h3, p{
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img{
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 헤더 */
+        header{
+            height: 10vh;
+            background-color:rgb(255, 255, 255);
+            align-content: center;
+        }
+        header .con{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            /* background-color: aliceblue; */
+        }
+        header .con .logo{
+            width: 20%;
+            padding-left: 20px;
+            box-sizing: border-box;
+            /* background-color: aqua; */
+        }
+        header .con .logo img{
+            width: 100%;
+            object-fit: cover;
+        }
+
+        header .con nav{
+            width: 40%;
+            /* background-color: blue; */
+        }
+        header .con nav > ul{
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        header .con .icon{
+            width: 20%;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 0 120px;
+            /* background-color: rgb(19, 59, 94); */
+        }
+        header .con .icon i{
+            font-size: 30px;
+        }
+
+        /* 메인 */
+
+        /* 섹션1_이미지슬라이드 */
+        main .imgslide{
+            height: 90vh;
+            background-color: aliceblue;
+        }
+        
+        main .imgslide img{
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* 섹션2_메뉴 */
+        main .menu{
+            height: 100vh;
+            /* background-color: rgb(253, 180, 152); */
+            align-content: center;
+        }
+        
+        main .menu .con{
+            width: 80%;
+            margin: 0 auto;
+        }
+        main .menu .textbox{
+            text-align: center;
+        }
+        main .menu .textbox h3{
+            font-size: 24px;
+            color: red;
+            margin-bottom: 12px;
+        }
+        main .menu .textbox h2{
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        main .menu .textbox p{
+            margin-bottom: 60px;
+        }
+        main .menu .tabmenu{
+            display: flex;
+            align-items: center;
+            width: 50%;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+        main .menu .tabmenu .button{
+            width: 100px;
+            height: 50px;
+            align-content: center;
+            text-align: center;
+            background-color: #8f8f8f;
+            color: white;
+            font-weight: 600;
+            border-radius: 30px;
+            margin: 0 auto;
+        }
+        main .menu .tabimg{
+            display: flex;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        main .menu .tabimg .item{
+            width: calc(100% / 4);
+        }
+        main .menu .tabimg .item img{
+            width: 100%;
+            margin-bottom: 12px;
+        }
+        main .menu .tabimg .item p{
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* 섹션3_노티스 */
+        .notice{
+            height: 60vh;
+            background-color: #f6f6f6;
+            align-content: center;
+            position: relative;
+        }
+        .notice > img{
+            width: 300px;
+            height: 50px;
+            
+        } 
+        .notice .con{
+            display: flex;
+            width: 70%;
+            margin: 0 auto;
+            gap: 50px;
+            z-index: 2;
+        }
+        .notice .con .notibox{
+            width: 50%;
+            height: 400px;
+            background-color: white;
+            padding: 40px;
+            box-sizing: border-box;
+            border-radius: 30px;
+            align-content: center;
+            
+        }
+        .notice .con .notibox .title{
+            display: flex;
+            justify-content: space-between;
+            font-size: 24px;
+            margin-bottom: 60px;
+        }
+        .notice .con .notibox .sub{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .notice .con .notibox .sub p{
+            font-size: 18pxpx;
+            font-weight: 600;
+        }
+        .notice .con .notibox .sub span{
+            color: #8f8f8f;
+        }
+
+        .notice .con .imgbox{
+            width: 50%;
+            background-color: #ff0000;
+            border-radius: 30px;
+        }
+
+        /* 섹션4_이벤트 */
+        .event{
+            height: 80vh;
+            background-color: #f6f6f6;
+            align-content: center;
+        }
+        .event .con{
+            display: flex;
+            width: 70%;
+            margin: 0 auto;
+            gap: 20px;
+        }
+        .event .con .item{
+            width: 20%;
+            height: 500px;
+            background-color: white;
+            border-radius: 20px;
+        }
+        .event .con .item .txtbox{
+            padding: 20px;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+        .event .con .item .txtbox h5{
+            color: red;
+            font-size: 15px;
+        }
+        .event .con .item .txtbox h2{
+            margin-bottom: 15px;
+        }
+        .event .con .item .txtbox p{
+            color: #8f8f8f;
+        }
+        .event .con .item img{
+            border-radius: 20px;
+        }
+
+        /* 섹션5_딜리버리 */
+        .delivery{
+            height: 90vh;
+            background-color: red;
+            align-content: center;
+        }
+        .delivery .con{
+            width: 70%;
+            display: flex;
+            margin: 0 auto;
+            background-color: #d62976;
+            gap: 20px;
+        }
+        .delivery .con .item{
+            width: calc(100% / 3);
+            height: 600px;
+            background-color: white;
+            margin: 0 auto;
+            position: relative;
+        }
+        .delivery .con .item .txtbox{
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        .delivery .con .item .txtbox .iconbox{
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .delivery .con .item .txtbox .iconbox p{
+            margin-left: 12px;
+        }
+        .delivery .con .item img{
+            position: absolute; bottom: 30px;
+            height: 300px;
+            background-color: #3b5998;
+        }
+
+        /* 섹션6_몰 */
+        .more{
+            height: 60vh;
+            border: 1px solid #000;
+        }
+        .more .conbox{
+            width: 75%;
+            height: 100%;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+        .more .con{
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+            box-sizing: border-box;
+            display: flex;
+            gap: 40px;
+            /* background-color: yellowgreen; */
+        }
+        .more .con .lbox{
+            width: 20%;
+            height: 100%;
+            background-color: blue
+        }
+        .more .con .lbox h2{
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .more .con .lbox p{
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        .more .con .lbox .button{
+            font-size: 18px;
+            margin-bottom: 100px;
+            color: #999;
+        }
+        .more .con .lbox .cbox{
+            display: flex;
+            gap: 10px;
+        }
+        .more .con .lbox .cbox .box{
+            width: 15px;
+            height: 15px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+        .more .mbox{
+            width: 60%;
+            height: 100%;
+            background-color: #c4302b;
+        }
+        .more .mbox .imgbox{
+            width: 100%;
+            height: 400px;
+            background-color: #e34b4b;
+            position: relative;
+        }
+        .more .mbox .imgbox img{
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           display: block;
+        }
+        .more .mbox .textbox{
+            position: absolute; left: 5%; top: 50%;
+            transform: translateY(-50%);
+        }
+        .more .rbox{
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #000;
+        }
+        .more .rbox .item{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="con">
+            <div class="logo">
+                <img src="./이미지/logo.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">메뉴</a>
+                    </li>
+                    <li>
+                        <a href="#">매장찾기</a>
+                    </li>
+                    <li>
+                        <a href="#">커뮤니티</a>
+                    </li>
+                    <li>
+                        <a href="#">창업안내</a>
+                    </li>
+                    <li>
+                        <a href="#">CONTACT US</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="icon">
+                <i class="fa-brands fa-square-facebook" style="color: #3b5998;"></i>
+                <i class="fa-brands fa-youtube" style="color: #c4302b;"></i>
+                <i class="fa-brands fa-instagram" style="color: #d62976;"></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="imgslide">
+                <img src="./이미지/이미지슬라이드/618aa68ba49599b94ba1d2f192587e29.jpg" alt="">
+        </section>
+        <section class="menu">
+            <div class="con">
+                <div class="textbox">
+                    <h3>MENU</h3>
+                    <h2>맛있는 국대 메뉴</h2>
+                    <p>인기있는 국대 메뉴들을 확인해 보세요!</p>
+                </div>
+                <div class="tabmenu">
+                    <div class="button">떡볶이</div>
+                    <div class="button">세트</div>
+                    <div class="button">사이드</div>
+                    <div class="button">튀김</div>
+                </div>
+                <div class="tabimg">
+                    <div class="item">
+                        <img src="./이미지/메뉴/떡볶이/국대떡볶이.jpg" alt="">
+                        <p>국대 떡볶이</p>
+                    </div>
+                    <div class="item">
+                        <img src="./이미지/메뉴/떡볶이/치즈떡볶이.jpg" alt="">
+                        <p>치즈 떡볶이</p>
+                    </div>
+                    <div class="item">
+                        <img src="./이미지/메뉴/떡볶이/로제떡볶이.jpg" alt="">
+                        <p>로제 떡볶이</p>
+                    </div>
+                    <div class="item">
+                        <img src="./이미지/메뉴/떡볶이/마라떡볶이.png" alt="">
+                        <p>마라 떡볶이</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="notice">
+            <img src="./이미지/logo_w.png" alt="">
+            <div class="con">
+                <div class="notibox">
+                    <div class="title">
+                        <h2>NOTICE</h2>
+                        <h2>+</h2>
+                    </div>
+                    <div class="sub">
+                        <p>오늘 나온 신메뉴 대박 맛있음</p>
+                        <span>2025.03.27</span>
+                    </div>
+                    <div class="sub">
+                        <p>오늘 나온 신메뉴 대박 맛있음</p>
+                        <span>2025.03.27</span>
+                    </div>
+                    <div class="sub">
+                        <p>오늘 나온 신메뉴 대박 맛있음</p>
+                        <span>2025.03.27</span>
+                    </div>
+                    <div class="sub">
+                        <p>오늘 나온 신메뉴 대박 맛있음</p>
+                        <span>2025.03.27</span>
+                    </div>
+                </div>
+                <div class="imgbox">
+                    <img src="" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="event">
+            <div class="con">
+                <div class="item">
+                    <img src="./이미지/이벤트/로제.png" alt="">
+                    <div class="txtbox">
+                        <h5>진행중</h5>
+                        <h2>[앱주문] <br> 방문포장 20% 할인 </h2>
+                        <p>2025-03-27</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./이미지/이벤트/바질.png" alt="">
+                    <div class="txtbox">
+                        <h5>진행중</h5>
+                        <h2>[앱주문] <br> 방문포장 20% 할인 </h2>
+                        <p>2025-03-27</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./이미지/이벤트/로제.png" alt="">
+                    <div class="txtbox">
+                        <h5>진행중</h5>
+                        <h2>[앱주문] <br> 방문포장 20% 할인 </h2>
+                        <p>2025-03-27</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./이미지/이벤트/로제.png" alt="">
+                    <div class="txtbox">
+                        <h5>진행중</h5>
+                        <h2>[앱주문] <br> 방문포장 20% 할인 </h2>
+                        <p>2025-03-27</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./이미지/이벤트/로제.png" alt="">
+                    <div class="txtbox">
+                        <h5>진행중</h5>
+                        <h2>[앱주문] <br> 방문포장 20% 할인 </h2>
+                        <p>2025-03-27</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="delivery">
+            <div class="con">
+                <div class="item">
+                    <div class="txtbox">
+                        <div class="iconbox">
+                            <i class="fa-solid fa-face-smile"></i>
+                            <p>story</p>
+                        </div>
+                        <h2>제목입니다!</h2>
+                    </div>
+                    <img src="./이미지/이미지1.png" alt="">
+                </div>
+                <div class="item">
+                    <div class="txtbox">
+                        <div class="iconbox">
+                            <i class="fa-solid fa-face-smile"></i>
+                            <p>story</p>
+                        </div>
+                        <h2>제목입니다!</h2>
+                    </div>
+                    <img src="./이미지/이미지2.png" alt="">
+                </div>
+                <div class="item">
+                    <div class="txtbox">
+                        <div class="iconbox">
+                            <i class="fa-solid fa-face-smile"></i>
+                            <p>story</p>
+                        </div>
+                        <h2>제목입니다!</h2>
+                    </div>
+                    <img src="./이미지/이미지3.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="more">
+            <div class="conbox">
+                <div class="con">
+                    <div class="lbox">
+                        <h2>가맹문의</h2>
+                        <p>국대떡볶이와 <br> 함께하실 분들을 모십니다</p>
+                        <div class="button">+ VIEW MORE</div>
+                        <div class="cbox">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                    <div class="mbox">
+                        <div class="imgbox">
+                            <img src="./이미지/몰/창업안내.jpg" alt="">
+                        </div>
+                        <div class="textbox">
+                            <h2>가맹문의</h2>
+                            <p>국대떡볶이 창업안내 & 문의</p>
+                            <h3>국대 떡볶이와 <br> 함께하실 분들을 모십니다</h3>
+                        </div>
+                    </div>
+                    <div class="rbox">
+                        <div class="item">
+                            <div class="imgbox">
+                                <img src="" alt="">
+                            </div>
+                            <div class="textbox">
+                                <h2>가맹문의</h2>
+                                <p>국대떡볶이 창업안내 & 문의</p>
+                                <h3>국대 떡볶이와 <br> 함께하실 분들을 모십니다</h3>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgbox">
+                                <img src="" alt="">
+                            </div>
+                            <div class="textbox">
+                                <h2>가맹문의</h2>
+                                <p>국대떡볶이 창업안내 & 문의</p>
+                                <h3>국대 떡볶이와 <br> 함께하실 분들을 모십니다</h3>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgbox">
+                                <img src="" alt="">
+                            </div>
+                            <div class="textbox">
+                                <h2>가맹문의</h2>
+                                <p>국대떡볶이 창업안내 & 문의</p>
+                                <h3>국대 떡볶이와 <br> 함께하실 분들을 모십니다</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                                                                                                                           </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
